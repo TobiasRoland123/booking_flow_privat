@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" modified="2023-05-26T07:18:21.824Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="s8-TdpCBUqekxOUMCfWS" version="20.8.23" type="github">
+  <diagram name="Page-1" id="pSEkMJfL0ta6zeYYu2LB">
+    <mxGraphModel dx="2690" dy="2264" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="gbIkmvxCu_3_fD2l40oO-1" target="gbIkmvxCu_3_fD2l40oO-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-1" value="Choose ticket amount" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="210" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gbIkmvxCu_3_fD2l40oO-2" target="gbIkmvxCu_3_fD2l40oO-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-8" value="False" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gbIkmvxCu_3_fD2l40oO-7">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint x="16" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="gbIkmvxCu_3_fD2l40oO-2" target="gbIkmvxCu_3_fD2l40oO-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-11" value="True" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gbIkmvxCu_3_fD2l40oO-10">
+          <mxGeometry x="-0.087" y="1" relative="1" as="geometry">
+            <mxPoint x="-15" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-2" value="One tent&lt;br&gt;for each" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="350" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-18" value="True" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gbIkmvxCu_3_fD2l40oO-6" target="gbIkmvxCu_3_fD2l40oO-17">
+          <mxGeometry x="-0.2941" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-20" value="false" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gbIkmvxCu_3_fD2l40oO-6" target="gbIkmvxCu_3_fD2l40oO-19">
+          <mxGeometry x="-0.3939" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-6" value="If spots available&lt;br&gt;&amp;gt;= ticket amount" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="430" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gbIkmvxCu_3_fD2l40oO-9" target="gbIkmvxCu_3_fD2l40oO-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-9" value="Reserved spots amount&lt;br&gt;=&lt;br&gt;amount of ticket" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="450" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-14" value="Tent count&amp;nbsp;&lt;br&gt;=&lt;br&gt;2 person tent : ticket amount" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="570" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gbIkmvxCu_3_fD2l40oO-17" target="gbIkmvxCu_3_fD2l40oO-28">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-17" value="Reserved spots amount&lt;br&gt;=&lt;br&gt;ticketAmount" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="550" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gbIkmvxCu_3_fD2l40oO-19" target="gbIkmvxCu_3_fD2l40oO-28">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-19" value="ReservedSpotsAmount&lt;br&gt;=&lt;br&gt;spotsAvailable" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="550" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-21" value="tentCount = custom" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="770" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-25" value="ticketAmount" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="470" y="530" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-26" value="spotsAvailable" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="530" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-28" value="ticketAmount&lt;br&gt;reservedSpotsAmount" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="200" y="740" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-29" value="ticketAmount" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="720" y="430" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gbIkmvxCu_3_fD2l40oO-30" value="ticketAmount" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="210" y="440" width="120" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

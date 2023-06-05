@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #f9f9f9;
+  --gillSans: "Gill Sans", "Tahoma", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: var(--white);
+  font-family: var(--font-playfair);
+  text-transform: uppercase;
+}
+
+h2,
+h3,
+p {
+  color: var(--white);
+  font-family: var(--gillSans);
+}
+
+h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  -webkit-text-stroke: 0.12rem currentcolor;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--gillSans);
+  color: var(--white);
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+p {
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+small {
+  color: var(--white);
+  font-family: var(--gillSans);
+}
+span {
+  font-family: var(--gillSans);
+}
+
+/* Removes the margin on the radio button */
+.css-j204z7-MuiFormControlLabel-root {
+  margin: 0;
+}
+
+/* Changes the ripple effect on the radio button */
+.css-8je8zh-MuiTouchRipple-root {
+  color: #f9f01f;
+}
+
+.css-ahj2mt-MuiTypography-root {
+  font-family: var(--gillSans);
+}
+
+.css-10botns-MuiInputBase-input-MuiFilledInput-input,
+.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root {
+  font-family: var(--gillSans);
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #1d1c29;
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  color: #f9f9f9;
+}
