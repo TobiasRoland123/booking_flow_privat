@@ -36,14 +36,14 @@ export default function AreaAndAmount(props) {
   async function startBookingTimer() {
     const updatedCountdownTime = countdownTime + new Date().getTime() + 300000;
     await setCountdownTime(updatedCountdownTime);
-    setBookingDetails(prev => ({
+    setBookingDetails((prev) => ({
       ...prev,
       buyTimeout: updatedCountdownTime,
     }));
   }
 
   function updateBookingDetails(reservation_id) {
-    setBookingDetails(prev => ({
+    setBookingDetails((prev) => ({
       ...prev,
       reservation_id,
     }));
@@ -53,8 +53,8 @@ export default function AreaAndAmount(props) {
     <main>
       <h1 className="mx-4 mt-10 text-center"> Purchase ticket</h1>
       <p className="mx-auto my-10 max-w-2xl">
-        With the mesmerizing <strong>Northern Lights</strong> as your backdrop, get ready to lose
-        yourself to the beats of the loudest music that's sure to get your heart racing.
+        With the mesmerizing <strong>Northern Lights</strong> as your backdrop, get ready to lose yourself to the beats of the
+        loudest music that's sure to get your heart racing.
       </p>
       <div className="mx-auto max-w-3xl">
         {/* component, that lets user choose amount of tickets */}
@@ -65,9 +65,9 @@ export default function AreaAndAmount(props) {
       </div>
       {/* button for testing, just logs bookingDetails */}
 
-      {/* <div className=" grid place-content-center"> */}
-      {/* Used to log the booking information to make sure the correct data is logged for the further flow */}
-      {/* <button
+      <div className=" grid place-content-center">
+        {/* Used to log the booking information to make sure the correct data is logged for the further flow */}
+        <button
           className="m-5 bg-color-white p-5"
           onClick={() => {
             console.log(`This is bookingDetails: `, bookingDetails);
@@ -75,7 +75,7 @@ export default function AreaAndAmount(props) {
         >
           Log bookingDetails
         </button>
-      </div> */}
+      </div>
 
       <div className=" mb-16 mt-10 flex justify-center">
         {bookingDetails.ticketAmount === 0 ? (
@@ -84,16 +84,14 @@ export default function AreaAndAmount(props) {
             className=" mb-10 h-10 gap-5 place-self-center rounded-none border-2 border-solid border-color-gray bg-color-gray px-6 font-sans font-semibold text-color-black hover:bg-color-yellow hover:text-color-black "
             onClick={reserveTickets}
           >
-            <span className="pt-1">Next step</span>{" "}
-            <span className="material-symbols-outlined">arrow_forward</span>
+            <span className="pt-1">Next step</span> <span className="material-symbols-outlined">arrow_forward</span>
           </Button>
         ) : (
           <Button
             className=" mb-10 h-10 gap-5 place-self-center rounded-none border-2 border-solid border-color-yellow px-6 font-sans font-semibold text-color-yellow hover:bg-color-yellow hover:text-color-black "
             onClick={reserveTickets}
           >
-            <span className="pt-1">Next step</span>{" "}
-            <span className="material-symbols-outlined">arrow_forward</span>
+            <span className="pt-1">Next step</span> <span className="material-symbols-outlined">arrow_forward</span>
           </Button>
         )}
       </div>

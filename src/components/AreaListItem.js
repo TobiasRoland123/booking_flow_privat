@@ -94,7 +94,10 @@ export function AreaListItem(props) {
     if (bookingDetails.oneTentForEach === true) {
       return bookingDetails.ticketAmount <= availableSpots ? colorClass + " text-color-green" : "text-color-red";
     } else if (bookingDetails.oneTentForEach === false) {
-      return (bookingDetails.ticketAmount < 3 && availableSpots > bookingDetails.ticketAmount) || bookingDetails.ticketAmount / 3 <= availableSpots ? colorClass + " text-color-green" : "text-color-red";
+      return (bookingDetails.ticketAmount < 3 && availableSpots > bookingDetails.ticketAmount) ||
+        bookingDetails.ticketAmount / 3 <= availableSpots
+        ? colorClass + " text-color-green"
+        : "text-color-red";
     }
   }
 
@@ -146,56 +149,107 @@ export function AreaListItem(props) {
           </Box>
         </Fade>
       </Modal>
-
       <section
-        className={`duration-500" flex h-32 w-full cursor-pointer flex-col self-center rounded-sm bg-color-black bg-gradient-to-b from-color-opacity-20 to-color-opacity-10 py-4 pl-2 pr-3 text-lg sm:w-auto ${area.available === 0 ? "bg-color-opacity-10" : ""} ${areaAvailable() === "text-color-red" ? "bg-color-opacity-10" : ""}
-      ${area.area === bookingDetails.area ? "bg-gradient-to-b from-color-teal to-color-purple" : ""}
-      `}
+        className={`duration-500" flex h-32 w-full cursor-pointer flex-col self-center rounded-sm bg-color-black bg-gradient-to-b from-color-opacity-20 to-color-opacity-10 py-4 pl-2 pr-3 text-lg sm:w-auto ${
+          area.available === 0 ? "bg-color-opacity-10" : ""
+        } ${areaAvailable() === "text-color-red" ? "bg-color-opacity-10" : ""}
+${area.area === bookingDetails.area ? "bg-gradient-to-b from-color-teal to-color-purple" : ""}
+`}
         onClick={checkTicketAndArea}
       >
         <div className="mr-0 flex justify-between duration-200">
-          <h3 className={` self-center text-lg duration-200 ${area.available === 0 ? "text-color-gray" : ""} ${areaAvailable() === "text-color-red" ? "text-color-gray" : ""}`}>{area.area}</h3>
-          <RadioGroup
-            className="self-center"
-            aria-label="area"
-            name="area"
-            value={initialArea}
-            onChange={updateBookingInformation}
-          >
-            <FormControlLabel
-              value={area.area}
-              control={
-                <Radio
-                  className={`${area.available === 0 ? "color-gray" : ""} `}
-                  sx={{
-                    m: 0,
-                    "& .MuiSvgIcon-root": {
-                      fontSize: 20,
-                      color: areaAvailable() === "text-color-red" ? "gray" : "yellow" && area.available === 0 ? "gray" : "yellow",
+          <h3>{area.area}</h3>
+          <Radio
+            checked={area.area === bookingDetails.area}
+            value={area.area}
+            name={area.area}
+            sx={{
+              m: 0,
+              "& .MuiSvgIcon-root": {
+                fontSize: 20,
+                color: areaAvailable() === "text-color-red" ? "gray" : "yellow" && area.available === 0 ? "gray" : "yellow",
 
-                      "&.Mui-checked": {
-                        color: "yellow",
-                      },
-                      "&.MuiTouchRipple-root": {
-                        color: "yellow",
-                      },
-                    },
-                  }}
-                  disabled={areaAvailable() === "text-color-red" || area.available === 0}
-                />
-              }
-              disabled={areaAvailable() === "text-color-red" || area.available === 0}
-            ></FormControlLabel>
-          </RadioGroup>
+                "&.Mui-checked": {
+                  color: "yellow",
+                },
+                "&.MuiTouchRipple-root": {
+                  color: "yellow",
+                },
+              },
+            }}
+          />
         </div>
-
         <div className={`mt-auto  flex justify-between ${area.available === 0 ? "text-color-gray" : ""}`}>
-          <p className={`areaAvailable()  self-center duration-200 ${areaAvailable() === "text-color-red" ? "text-color-gray" : ""} ${area.available === 0 ? "text-color-gray" : ""} `}>spots left</p>
+          <p
+            className={`areaAvailable()  self-center duration-200 ${
+              areaAvailable() === "text-color-red" ? "text-color-gray" : ""
+            } ${area.available === 0 ? "text-color-gray" : ""} `}
+          >
+            spots left
+          </p>
           <div className="self-center font-sans">
-            <span className={` ${areaAvailable()} pr-2.5 text-2xl  font-bold ${area.available === 0 || "text-color-red" ? "text-color-gray" : ""}`}>{area.available}</span>
+            <span
+              className={` ${areaAvailable()} pr-2.5 text-2xl  font-bold ${
+                area.available === 0 || "text-color-red" ? "text-color-gray" : ""
+              }`}
+            >
+              {area.available}
+            </span>
           </div>
         </div>
       </section>
     </>
   );
+}
+
+{
+  /* <section
+className={`duration-500" flex h-32 w-full cursor-pointer flex-col self-center rounded-sm bg-color-black bg-gradient-to-b from-color-opacity-20 to-color-opacity-10 py-4 pl-2 pr-3 text-lg sm:w-auto ${area.available === 0 ? "bg-color-opacity-10" : ""} ${areaAvailable() === "text-color-red" ? "bg-color-opacity-10" : ""}
+${area.area === bookingDetails.area ? "bg-gradient-to-b from-color-teal to-color-purple" : ""}
+`}
+onClick={checkTicketAndArea}
+>
+<div className="mr-0 flex justify-between duration-200">
+  <h3 className={` self-center text-lg duration-200 ${area.available === 0 ? "text-color-gray" : ""} ${areaAvailable() === "text-color-red" ? "text-color-gray" : ""}`}>{area.area}</h3>
+  <RadioGroup
+    className="self-center"
+    aria-label="area"
+    name="area"
+    value={initialArea}
+    onChange={updateBookingInformation}
+  >
+    <FormControlLabel
+      value={area.area}
+      control={
+        <Radio
+          className={`${area.available === 0 ? "color-gray" : ""} `}
+          sx={{
+            m: 0,
+            "& .MuiSvgIcon-root": {
+              fontSize: 20,
+              color: areaAvailable() === "text-color-red" ? "gray" : "yellow" && area.available === 0 ? "gray" : "yellow",
+
+              "&.Mui-checked": {
+                color: "yellow",
+              },
+              "&.MuiTouchRipple-root": {
+                color: "yellow",
+              },
+            },
+          }}
+          disabled={areaAvailable() === "text-color-red" || area.available === 0}
+        />
+      }
+      disabled={areaAvailable() === "text-color-red" || area.available === 0}
+    ></FormControlLabel>
+  </RadioGroup>
+</div>
+
+<div className={`mt-auto  flex justify-between ${area.available === 0 ? "text-color-gray" : ""}`}>
+  <p className={`areaAvailable()  self-center duration-200 ${areaAvailable() === "text-color-red" ? "text-color-gray" : ""} ${area.available === 0 ? "text-color-gray" : ""} `}>spots left</p>
+  <div className="self-center font-sans">
+    <span className={` ${areaAvailable()} pr-2.5 text-2xl  font-bold ${area.available === 0 || "text-color-red" ? "text-color-gray" : ""}`}>{area.available}</span>
+  </div>
+</div>
+</section> */
 }
