@@ -18,11 +18,12 @@ export function AreaListItem(props) {
   // sets state of bookingDetails to our context(BookingInformation).
   const [bookingDetails, setBookingDetails] = useContext(BookingInformation);
   const initialArea = bookingDetails.area || "";
+
   // state for modal
   const [open, setOpen] = useState(false);
 
   // state for reserved spots
-  const [spotAmount, setSpotAmount] = useState(0);
+  const [spotAmount, setSpotAmount] = useState(2);
 
   // creates functions to handle modal
   const handleOpen = () => setOpen(true);
@@ -37,9 +38,11 @@ export function AreaListItem(props) {
     } else if (bookingDetails.oneTentForEach === false) {
       // Checks if there is enough spots available and sets spotAmount to the highest number of spots available while keeping it from going over ticketAmount.
       if (bookingDetails.ticketAmount <= area.available) {
-        setSpotAmount(bookingDetails.ticketAmount);
+        // setSpotAmount(bookingDetails.ticketAmount);
+        props.setChosenArea(area.area);
       } else if (bookingDetails.ticketAmount / 3 <= area.available) {
-        setSpotAmount(area.available);
+        // setSpotAmount(area.available);
+        props.setChosenArea(area.area);
       } else {
         handleOpen();
       }
@@ -63,11 +66,12 @@ export function AreaListItem(props) {
     if (area.available > 0) {
       updateBookingInformation();
     }
-  }, [spotAmount, bookingDetails.ticketAmount]);
+  }, [/*spotAmount, bookingDetails.ticketAmount,*/ props.chosenArea]);
 
   // This function updates the bookingInformation, so that it  also contains the clicked area and amount of spots to reserve
   function updateBookingInformation() {
-    // console.log(`updateBookingInformation called`);
+    console.log(`updateBookingInformation called`);
+    console.log(props.chosenArea);
     setBookingDetails((prev) => ({
       ...prev,
       area: area.area,
