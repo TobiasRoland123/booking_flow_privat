@@ -19,35 +19,15 @@ export function AreaListItem(props) {
   const [bookingDetails, setBookingDetails] = useContext(BookingInformation);
   const initialArea = bookingDetails.area || "";
 
-  // state for modal
-  const [open, setOpen] = useState(false);
+  // // state for modal
+  // const [open, setOpen] = useState(false);
 
   // state for reserved spots
   const [spotAmount, setSpotAmount] = useState(2);
 
-  // creates functions to handle modal
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  /* This function checks if there is enough available spots for the chosen amount of tickets  */
-  function checkTicketAndArea() {
-    // checks if you want to have a tent spot for each ticket, or if you are willing to share tent.
-    if (bookingDetails.oneTentForEach === true) {
-      // Checks if there is enough spots available and sets spotAmount
-      bookingDetails.ticketAmount <= area.available ? setSpotAmount(bookingDetails.ticketAmount) : handleOpen();
-    } else if (bookingDetails.oneTentForEach === false) {
-      // Checks if there is enough spots available and sets spotAmount to the highest number of spots available while keeping it from going over ticketAmount.
-      if (bookingDetails.ticketAmount <= area.available) {
-        // setSpotAmount(bookingDetails.ticketAmount);
-        props.setChosenArea(area.area);
-      } else if (bookingDetails.ticketAmount / 3 <= area.available) {
-        // setSpotAmount(area.available);
-        props.setChosenArea(area.area);
-      } else {
-        handleOpen();
-      }
-    }
-  }
+  // // creates functions to handle modal
+  // const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
 
   // styling for modal
   const style = {
@@ -61,23 +41,6 @@ export function AreaListItem(props) {
     boxShadow: 24,
     p: 4,
   };
-
-  useEffect(() => {
-    if (area.available > 0) {
-      updateBookingInformation();
-    }
-  }, [/*spotAmount, bookingDetails.ticketAmount,*/ props.chosenArea]);
-
-  // This function updates the bookingInformation, so that it  also contains the clicked area and amount of spots to reserve
-  function updateBookingInformation() {
-    console.log(`updateBookingInformation called`);
-    console.log(props.chosenArea);
-    setBookingDetails((prev) => ({
-      ...prev,
-      area: area.area,
-      spotAmount: spotAmount,
-    }));
-  }
 
   // This function helps to indicate whether an area is available based on the amount of tickets you have chosen.
   // if the area is available then the text is white, else it's purple
@@ -113,8 +76,8 @@ export function AreaListItem(props) {
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        open={open}
-        onClose={handleClose}
+        open={props.open}
+        onClose={props.handleClose}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
         slotProps={{
@@ -145,7 +108,7 @@ export function AreaListItem(props) {
             <div className="mt-10 flex justify-center">
               <Button
                 className=" mb-10 h-10 gap-5 place-self-center rounded-none border-2 border-solid border-color-yellow px-6 font-sans font-semibold text-color-yellow hover:bg-color-yellow hover:text-color-black "
-                onClick={handleClose}
+                onClick={props.handleClose}
               >
                 <span className="pt-1">Close</span>
               </Button>
@@ -159,7 +122,7 @@ export function AreaListItem(props) {
         } ${areaAvailable() === "text-color-red" ? "bg-color-opacity-10" : ""}
 ${area.area === bookingDetails.area ? "bg-gradient-to-b from-color-teal to-color-purple" : ""}
 `}
-        onClick={checkTicketAndArea}
+        onClick={() => props.checkTicketAndArea(area)}
       >
         <div className="mr-0 flex justify-between duration-200">
           <h3>{area.area}</h3>
