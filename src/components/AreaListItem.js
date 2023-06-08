@@ -73,7 +73,7 @@ export function AreaListItem(props) {
   return (
     <>
       {/* modal from mui */}
-      <Modal
+      {/* <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={props.open}
@@ -115,7 +115,7 @@ export function AreaListItem(props) {
             </div>
           </Box>
         </Fade>
-      </Modal>
+      </Modal> */}
       <section
         className={`duration-500" flex h-32 w-full cursor-pointer flex-col self-center rounded-sm bg-color-black bg-gradient-to-b from-color-opacity-20 to-color-opacity-10 py-4 pl-2 pr-3 text-lg sm:w-auto ${
           area.available === 0 ? "bg-color-opacity-10" : ""
