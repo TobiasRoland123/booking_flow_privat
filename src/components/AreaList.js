@@ -5,7 +5,7 @@ import { AreaListItem } from "./AreaListItem";
 export function AreaList(props) {
   const [chosenArea, setChosenArea] = useState("");
   const [bookingDetails, setBookingDetails] = useContext(BookingInformation);
-  const [spotAmount, setSpotAmount] = useState(2);
+  const [spotAmount, setSpotAmount] = useState(0);
   // state for modal
   const [open, setOpen] = useState(false);
 
@@ -18,24 +18,31 @@ export function AreaList(props) {
     // checks if you want to have a tent spot for each ticket, or if you are willing to share tent.
     if (bookingDetails.oneTentForEach === true) {
       // Checks if there is enough spots available and sets spotAmount
-      bookingDetails.ticketAmount <= clickedArea.available ? setChosenArea(clickedArea.area) : handleOpen();
+      bookingDetails.ticketAmount <= clickedArea.available
+        ? setSpotAndArea(clickedArea.area, bookingDetails.ticketAmount)
+        : handleOpen();
     } else if (bookingDetails.oneTentForEach === false) {
       // Checks if there is enough spots available and sets spotAmount to the highest number of spots available while keeping it from going over ticketAmount.
       if (bookingDetails.ticketAmount <= clickedArea.available) {
         // setSpotAmount(bookingDetails.ticketAmount);
-        setChosenArea(clickedArea.area);
+        setSpotAndArea(clickedArea.area, bookingDetails.ticketAmount);
       } else if (bookingDetails.ticketAmount / 3 <= clickedArea.available) {
         // setSpotAmount(area.available);
-        setChosenArea(clickedArea.area);
+        setSpotAndArea(clickedArea.area, clickedArea.available);
       } else {
         handleOpen();
       }
     }
   }
 
+  function setSpotAndArea(area, spots) {
+    setChosenArea(area);
+    setSpotAmount(spots);
+  }
+
   useEffect(() => {
     updateBookingInformation();
-  }, [/*spotAmount, bookingDetails.ticketAmount,*/ chosenArea]);
+  }, [spotAmount, /* bookingDetails.ticketAmount,*/ chosenArea]);
 
   // This function updates the bookingInformation, so that it  also contains the clicked area and amount of spots to reserve
   function updateBookingInformation() {
