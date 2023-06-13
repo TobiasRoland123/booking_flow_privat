@@ -156,7 +156,7 @@ export function AreaList(props) {
           ))}
         </section>
       </div>
-      <Button onClick={() => console.log("lastChosenArea", lastChosenArea)}>log lastChosenArea</Button>
+      {/* <Button onClick={() => console.log("lastChosenArea", lastChosenArea)}>log lastChosenArea</Button> */}
     </>
   );
 }
