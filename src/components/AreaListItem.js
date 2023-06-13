@@ -1,10 +1,6 @@
 import { BookingInformation } from "@/pages/_app";
 import { useContext, useState, useEffect } from "react";
-import Backdrop from "@mui/material/Backdrop";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
-import Typography from "@mui/material/Typography";
+
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
@@ -19,28 +15,8 @@ export function AreaListItem(props) {
   const [bookingDetails, setBookingDetails] = useContext(BookingInformation);
   const initialArea = bookingDetails.area || "";
 
-  // // state for modal
-  // const [open, setOpen] = useState(false);
-
   // state for reserved spots
   const [spotAmount, setSpotAmount] = useState(2);
-
-  // // creates functions to handle modal
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
-
-  // styling for modal
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "#000",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
 
   // This function helps to indicate whether an area is available based on the amount of tickets you have chosen.
   // if the area is available then the text is white, else it's purple
@@ -72,50 +48,7 @@ export function AreaListItem(props) {
   // const areaClass = areaStatus.class + (areaStatus.available ? "" : " text-color-gray");
   return (
     <>
-      {/* modal from mui */}
-      {/* <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={props.open}
-        onClose={props.handleClose}
-        closeAfterTransition
-        slots={{ backdrop: Backdrop }}
-        slotProps={{
-          backdrop: {
-            timeout: 500,
-          },
-        }}
-      >
-        <Fade in={open}>
-          <Box sx={style}>
-            <Typography
-              className="font-sans"
-              id="transition-modal-title"
-              variant="h6"
-              component="h2"
-            >
-              Not enough space on {area.area}
-            </Typography>
-            <Typography
-              className="font-sans"
-              id="transition-modal-description"
-              sx={{
-                mt: 2,
-              }}
-            >
-              Choose another area or adjust the amount of tickets to match the available number of spots.
-            </Typography>
-            <div className="mt-10 flex justify-center">
-              <Button
-                className=" mb-10 h-10 gap-5 place-self-center rounded-none border-2 border-solid border-color-yellow px-6 font-sans font-semibold text-color-yellow hover:bg-color-yellow hover:text-color-black "
-                onClick={props.handleClose}
-              >
-                <span className="pt-1">Close</span>
-              </Button>
-            </div>
-          </Box>
-        </Fade>
-      </Modal> */}
+      {/* Modal was here but has been moved to AreaList component */}
       <section
         className={`duration-500" flex h-32 w-full cursor-pointer flex-col self-center rounded-sm bg-color-black bg-gradient-to-b from-color-opacity-20 to-color-opacity-10 py-4 pl-2 pr-3 text-lg sm:w-auto ${
           area.available === 0 ? "bg-color-opacity-10" : ""
