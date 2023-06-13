@@ -23,7 +23,12 @@ export function AreaList(props) {
   const [open, setOpen] = useState(false);
 
   // creates functions to handle modal
-  const handleOpen = () => setOpen(true);
+  function handleOpen() {
+    setOpen(true);
+    setChosenArea("");
+  }
+  // const handleOpen = () => setOpen(true);
+
   const handleClose = () => setOpen(false);
 
   // styling for modal
@@ -72,7 +77,7 @@ export function AreaList(props) {
     /*By default lasChosenArea is ""(empty string), so if it has been set to something else, then
     call checkTicketAndArea with lasChosenArea as an argument*/
     lastChosenArea !== "" ? checkTicketAndArea(lastChosenArea) : console.log("lastChosenArea, has not been set");
-  }, [bookingDetails.ticketAmount]);
+  }, [bookingDetails.ticketAmount, bookingDetails.oneTentForEach]);
 
   useEffect(() => {
     updateBookingInformation();
