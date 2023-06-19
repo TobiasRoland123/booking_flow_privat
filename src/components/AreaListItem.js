@@ -13,10 +13,10 @@ export function AreaListItem(props) {
   const area = props.area;
   // sets state of bookingDetails to our context(BookingInformation).
   const [bookingDetails, setBookingDetails] = useContext(BookingInformation);
-  const initialArea = bookingDetails.area || "";
+  // const initialArea = bookingDetails.area || "";
 
   // state for reserved spots
-  const [spotAmount, setSpotAmount] = useState(2);
+  // const [spotAmount, setSpotAmount] = useState(2);
 
   // This function helps to indicate whether an area is available based on the amount of tickets you have chosen.
   // if the area is available then the text is white, else it's purple

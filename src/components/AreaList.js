@@ -147,8 +147,6 @@ export function AreaList(props) {
             <AreaListItem
               key={area.area}
               area={area}
-              // chosenArea={chosenArea}
-              // setChosenArea={setChosenArea}
               checkTicketAndArea={checkTicketAndArea}
               open={open}
               handleClose={handleClose}
