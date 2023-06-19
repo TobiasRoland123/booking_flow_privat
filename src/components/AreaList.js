@@ -15,7 +15,7 @@ export function AreaList(props) {
   const [chosenArea, setChosenArea] = useState("");
   const [bookingDetails, setBookingDetails] = useContext(BookingInformation);
   const [spotAmount, setSpotAmount] = useState(0);
-  const [bookedArea, setBookedArea] = useState("");
+  // const [bookedArea, setBookedArea] = useState("");
 
   // This variable is only used, to make spotAmount update when ticketAmount is changed
   const [lastChosenArea, setLastChosenArea] = useState("");
@@ -147,8 +147,8 @@ export function AreaList(props) {
             <AreaListItem
               key={area.area}
               area={area}
-              chosenArea={chosenArea}
-              setChosenArea={setChosenArea}
+              // chosenArea={chosenArea}
+              // setChosenArea={setChosenArea}
               checkTicketAndArea={checkTicketAndArea}
               open={open}
               handleClose={handleClose}
